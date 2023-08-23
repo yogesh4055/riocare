@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>RIOCare India PVT LTD :: Inventory and Stock Management</title>
+  
+  <link rel="stylesheet" href="assets/mdbootstrap4/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/mdbootstrap4/mdb.min.css">
+  <link rel="stylesheet" href="assets/mdbootstrap4/mdb-plugins-gathered.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <!-- endinject -->
+  <link rel="shortcut icon" href="assets/img/favicon.png" />
+</head>
+<body>
+  <div class="container-scroller">
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="navbar-brand-wrapper d-flex align-items-center">
+        <a class="navbar-brand brand-logo" href="index.html"><img src="assets/img/rio_care_logo.png" class="mr-2" alt="logo"/><span class="sys-logo align-self-center">Inventory and Stock Management</span></a>
+        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="assets/img/rio_care_small_logo.png" alt="logo"/></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center d-md-none d-lg-block" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+		<ul class="navbar-nav mr-lg-2">
+          <li class="nav-item nav-search d-none d-lg-block">
+            <div class="input-group">
+              <input type="text" class="form-control" id="navbar-search-input" placeholder="Search now" aria-label="search" aria-describedby="search">
+              <div class="input-group-prepend hover-cursor" id="navbar-search-icon">
+                <span class="input-group-text" id="search">
+                  <button type="search"><i class="icon-search" data-feather="search"></i></button>
+                </span>
+              </div>
+            </div>
+          </li>
+        </ul>
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item dropdown notification mr-0 pr-0">
+            <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#" data-toggle="dropdown">
+              <i data-feather="bell"></i>
+              <span class="count"></span>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="notificationDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Notifications</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="text-white" data-feather="alert-triangle"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">100 Pending Product</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="text-white" data-feather="settings"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Settings</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Password Change (2 days ago)
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="text-white" data-feather="user"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">50 New Product Received</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 Hrs ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item dropdown message mx-0 px-0"><a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#" data-toggle="dropdown"><i data-feather="message-square"></i><span class="count"></span></a><div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="messageDropdown">
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-success">
+                    <i class="text-white" data-feather="alert-triangle"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">10 Product Out of Stock</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    Just now
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-warning">
+                    <i class="text-white" data-feather="settings"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">Check Received Products</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 days ago
+                  </p>
+                </div>
+              </a>
+              <a class="dropdown-item preview-item">
+                <div class="preview-thumbnail">
+                  <div class="preview-icon bg-info">
+                    <i class="text-white" data-feather="plus"></i>
+                  </div>
+                </div>
+                <div class="preview-item-content">
+                  <h6 class="preview-subject font-weight-normal">2 New Product Added</h6>
+                  <p class="font-weight-light small-text mb-0 text-muted">
+                    2 Hrs ago
+                  </p>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              <img src="assets/img/user_img.png" alt="profile"/>
+			  <span class="username">
+				<h6>RIO Care</h6>
+			  </span>
+              <i class="align-self-center ml-1" data-feather="chevron-down"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              <a class="dropdown-item">
+                <i class="text-danger mr-2" data-feather="settings"></i>
+                Settings
+              </a>
+              <a class="dropdown-item">
+                <i class="text-danger mr-2" data-feather="power"></i>
+                Logout
+              </a>
+            </div>
+          </li>
+          <!-- <li class="nav-item nav-settings d-none d-lg-flex"> -->
+            <!-- <a class="nav-link" href="#"> -->
+              <!-- <i class="icon-ellipsis"></i> -->
+            <!-- </a> -->
+          <!-- </li> -->
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="sidebar">
+          <span class="icon-menu"></span>
+        </button>
+      </div>
+    </nav>
+    <div class="container-fluid page-body-wrapper">
+    
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">
+              <i class="menu-icon" data-feather="home"></i>
+              <span class="menu-title">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inward-raw-material.html">
+              <i class="menu-icon" data-feather="layers"></i>
+              <span class="menu-title">Inward Raw Material</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="inward-packing-material.html">
+              <i class="menu-icon" data-feather="package"></i>
+              <span class="menu-title">Inward Packing Material</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Issue-Material-For-Production.html">
+              <i class="menu-icon" data-feather="hard-drive"></i>
+              <span class="menu-title">Issue Material For Production</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="new-stock.html">
+              <i class="menu-icon" data-feather="shopping-cart"></i>
+              <span class="menu-title">Inward Finished Goods -<br />New Stock</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="dispatch-finished-goods.html">
+              <i class="menu-icon" data-feather="truck"></i>
+              <span class="menu-title">Dispatch Finished Goods</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="quality-control.html">
+              <i class="menu-icon" data-feather="check-square"></i>
+              <span class="menu-title">Quality Control</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <i class="menu-icon" data-feather="pie-chart"></i>
+              <span class="menu-title">Reports</span>
+			  <i class="icon-layout menu-arrow" data-feather="chevron-down"></i>
+            </a>
+			<div class="collapse" id="ui-basic">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link" href="annexure-i.html">Finished Goods Inward (Annexure - I)</a></li>
+                <li class="nav-item"><a class="nav-link" href="annexure-ii.html">Issual by stores for production for captive consumption-simethicone (Annexure - II)</a></li>
+                <li class="nav-item"><a class="nav-link" href="annexure-iii.html">Issed by Stores for Production (Annexure - III)</a></li>
+                <li class="nav-item"><a class="nav-link" href="annexure-iv.html">Goods Receipt Note (Annexure - IV)</a></li>
+                <li class="nav-item"><a class="nav-link" href="packing-annexure.html">Packing Material Inward (Annexure - IV)</a></li>
+                <li class="nav-item"><a class="nav-link" href="annexure-VI.html">Quality Control Approval/Rejection (Annexure -VI)</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="product-masters.html">
+              <i class="menu-icon" data-feather="shopping-bag"></i>
+              <span class="menu-title">Product Masters</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="user-masters.html">
+              <i class="menu-icon" data-feather="users"></i>
+              <span class="menu-title">User Masters</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="setting.html">
+              <i class="menu-icon" data-feather="settings"></i>
+              <span class="menu-title">Setting</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">
+              <i class="menu-icon" data-feather="power"></i>
+              <span class="menu-title">Logout</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- Main Container -->
+    <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row page-heading">
+                <div class="col-12 col-xl-8 mb-xl-0 align-self-center align-items-center d-flex">
+                  <h4 class="font-weight-bold"><i class="menu-icon" data-feather="home"></i>Dashboard</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div class="row dashboard">
+			<div class="col-12 col-lg-8">
+				<div class="card main-blocks">
+					<div class="card-body">
+						<div class="row ml-0">
+							<div class="col-12 col-lg-4">
+								<i class="icon manufacture"></i>
+								<p>Total Manufacturers</p>
+								<h2>50</h2>
+							</div>
+							<div class="col-12 col-lg-4">
+								<i class="icon supplier"></i>
+								<p>Total Suppliers</p>
+								<h2>100</h2>
+							</div>
+							<div class="col-12 col-lg-4">
+								<i class="icon customers"></i>
+								<p>Total Customers</p>
+								<h2>20K</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row icon-blocks">
+					<div class="col-12 col-lg-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="icon-wrap">
+									<i class="icon" data-feather="archive"></i>
+								</div>
+								<div class="con-wrap">
+									<p>Total Raw Material</p>
+									<h2>10 Ton</h2>
+									<span class="situation"><i class="text-success" data-feather="trending-up"></i>15% more than the previous month</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="card">
+							<div class="card-body">
+								<div class="icon-wrap">
+									<i class="icon" data-feather="box"></i>
+								</div>
+								<div class="con-wrap">
+									<p>Total Quantity</p>
+									<h2>10 Ton</h2>
+									<span class="situation"><i class="text-danger" data-feather="trending-down"></i>5% Less than the previous month</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row orders">
+					<div class="col-12 col-lg-6">
+						<div class="card">
+							<div class="card-body pr-0">
+								<div class="form-row">
+									<div class="col-8">
+										<p>Total Orders</p>
+										<h2>5000</h2>
+									</div>
+									<a href="orders.html" class="col-4">
+										<i class="icon" data-feather="shopping-cart"></i> View Orders
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 col-lg-6">
+						<div class="card">
+							<div class="card-body pr-0">
+								<div class="form-row">
+									<div class="col-8">
+										<p>Todays Delivery Orders</p>
+										<h2>100</h2>
+									</div>
+									<a href="orders.html" class="col-4">
+										<i class="icon" data-feather="shopping-cart"></i> View Orders
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-12 col-lg-4">
+				<div class="card bg-primary text-white low-stock">
+					<div class="card-heading">Low inventory products</div>
+					<div class="card-body">
+						<table cellpadding="0" cellspacing="0" border="0" class="table">
+							<thead>
+								<tr>
+									<th>Name of Inventory</th>
+									<th>Quantity</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Product name 1</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 2</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 3</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 4</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 5</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 6</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 7</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 8</td>
+									<td>50</td>
+								</tr>
+								<tr>
+									<td>Product name 9</td>
+									<td>50</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<div class="col-12">
+				<div class="card">
+					<div class="card-header">
+						Inward Raw Material Analysis
+					</div>
+					<div class="card-body">
+						<canvas id="canvas" style="height:40vh; width:80vw"></canvas>
+					</div>
+				</div>
+			</div>
+		  </div>
+		  
+		  <div class="copyright">
+			Copyright 2021. all rights are reserved.<b>Version 1.0</b>
+		  </div>
+		</div>
+	</div>
+</div>
+</div>
+
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="assets/mdbootstrap4/jquery.min.js"></script>
+  <script src="assets/mdbootstrap4/popper.min.js"></script>
+  <script src="assets/mdbootstrap4/bootstrap.min.js"></script>
+  <script src="assets/mdbootstrap4/mdb.min.js"></script>
+<script src="vendors/chart.js/Chart.min.js"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="assets/js/custom.js"></script>
+  <!-- End custom js for this page-->
+  <script src="assets/js/feather.min.js"></script>
+  <script>
+    feather.replace()
+  </script>
+</body>
+</html>

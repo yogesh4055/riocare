@@ -1,0 +1,16 @@
+ALTER TABLE `inward_raw_materials` ADD `is_opening` TINYINT NULL DEFAULT '0' AFTER `viscosity`;
+
+
+ALTER TABLE `inward_raw_materials_items` ADD `is_opening_stock` TINYINT NULL DEFAULT '1' AFTER `ar_no_date`;
+
+
+
+ALTER TABLE `goods_receipt_notes` ADD `is_opening_stock` TINYINT NULL DEFAULT '0' AFTER `goods_receipt_no`;
+
+
+ALTER TABLE `inward_finished_goods` ADD `is_opening_stock` TINYINT NULL DEFAULT '0' AFTER `received_by`;
+
+
+6LcKC9kZAAAAANEN1it5YUcqBGTxzUtVcse91A0y
+
+6LcKC9kZAAAAAI6BACG02whk7q78WBMQO4q6mYLt

@@ -1,0 +1,12 @@
+[26-Mar-2023 03:45:07 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[26-Mar-2023 03:45:09 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[26-Mar-2023 03:45:11 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[26-Mar-2023 03:45:13 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[26-Mar-2023 03:45:19 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[26-Mar-2023 03:45:20 UTC] PHP Parse error:  syntax error, unexpected variable "$uri" in /home1/qariocare/public_html/index.php on line 10
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 1253
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 1262
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 2482
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 2607
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/nesbot/carbon/src/Carbon/Traits/Date.php on line 2619
+[02-Aug-2023 21:33:40 Asia/Kolkata] PHP Deprecated:  Using ${var} in strings is deprecated, use {$var} instead in /home1/qariocare/public_html/vendor/facade/ignition/src/SolutionProviders/MergeConflictSolutionProvider.php on line 52
