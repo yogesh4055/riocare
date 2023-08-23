@@ -138,7 +138,7 @@
 
                     <label class="control-label d-flex">Raw Material Detail
                         <div class="input-group-btn">
-                            <!-- <button class="btn btn-dark add-more add_field_button_4 waves-effect waves-light" type="button">Add More +</button> -->
+                            <button class="btn btn-dark add-more add_field_button_4 waves-effect waves-light" type="button">Add More +</button>
                         </div>
                     </label><br>
 
@@ -218,6 +218,7 @@
                             <th>Start Time (24 Hrs)</th>
                             <th>End Time (24 Hrs)</th>
                             <th>Done by</th>
+                            <th>Checked By</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -238,13 +239,12 @@
                                             id="stratTime[1]" class="form-control timepicker" data-mask="00:00"></td>
                                     <td><input type="text" value="{{ $v->endTime }}" name="endTime[]" id="endTime[1]"
                                             class="form-control timepicker" data-mask="00:00"></td>
-                                    <td>{{ Form::select('doneby[]', $usersworker, old('doneby')?old('doneby'):(isset($v->doneby)?$v->doneby:Auth::user()->id), ['id' => 'doneby[5]', 'class' => 'form-control select']) }}
-
-                                    </td>
+                                    <td>{{ Form::select('doneby[]', $usersworker, old('doneby')?old('doneby'):(isset($v->doneby)?$v->doneby:Auth::user()->id), ['id' => 'doneby[5]', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }}</td>
+                                    <td>{{ Form::select('checkedby[]', $checkedBy, old('checkedby')?old('checkedby'):(isset($v->checkedby)?$v->checkedby:Auth::user()->id), ['id' => 'checkedby[5]', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }}</td>
                                 </tr>
                             @endforeach
                         @else
-
+                        
 
                         @foreach($processgroup as $p)
                             @php $i=1; @endphp
@@ -256,8 +256,8 @@
                                         data-mask="00:00"></td>
                                 <td><input type="text" name="endTime[]" id="endTime[{{ $i }}]" class="form-control timepicker"
                                         data-mask="00:00"></td>
-                                <td>{{ Form::select('doneby[]', $usersworker, old('doneby')?old('doneby'):Auth::user()->id, ['id' => 'doneby['.$i.']', 'class' => 'form-control select']) }}
-                                </td>
+                                <td>{{ Form::select('doneby[]', $usersworker, old('doneby')?old('doneby'):Auth::user()->id, ['id' => 'doneby['.$i.']', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }} </td>
+                                <td>{{ Form::select('checkedby[]', $checkedBy, old('checkedby')?old('checkedby'):Auth::user()->id, ['id' => 'checkedby['.$i.']', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }} </td>
                             </tr>
                             @php $i++ ; @endphp
                         @endforeach

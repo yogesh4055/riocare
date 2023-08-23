@@ -67,8 +67,15 @@
 
                         </ul>
                     </li>
-                    
-
+                    <li class="dropdown"><a role="tab" class="dropdown-toggle {{ in_array($sequenceId,array(7)) ? 'active' : '' }}" data-toggle="dropdown" href="#">Finished Goods<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a role="tab" class="{{ $sequenceId == '7' ? 'active' : '' }}"
+                                    area-selected="{{ $sequenceId == '7' ? 'true' : 'false' }}" data-toggle="tab"
+                                    href="#requisitionFinishGood">Requisition</a></li>
+                            <li><a role="tab" class=""area-selected="" data-toggle="tab" href="#issualFinishGood">Issual of requisition</a>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a role="tab" class="{{ $sequenceId == '8' ? 'active' : '' }}"
                             area-selected="{{ $sequenceId == '8' ? 'true' : 'false' }}" data-toggle="tab"
                             href="#listOfEquipment">List of Equipment</a></li>
@@ -456,7 +463,36 @@
                 x--;
             })
         });
-        
+        $(document).ready(function() {
+            var max_fields = 15; //maximum input boxes allowed
+            var wrapper = $(".input_fields_wrap_7"); //Fields wrapper
+            var add_button = $(".add_field_button_7"); //Add button ID
+
+            var x =
+                '{{ isset($requestion_details_packing) && count($requestion_details_packing) > 0 ? count($requestion_details_packing) : 1 }}'; //initlal text box count
+            $(add_button).click(function(e) { //on add input button click
+                e.preventDefault();
+                if (x < max_fields) { //max input box allowed
+                    x++; //text box increment
+                    $(wrapper).append(
+                        '<div class="row add-more-wrap add-more-new m-0 mb-4"><span class="add-count">' +
+                        x +
+                        '</span><div class="input-group-btn"><button class="btn btn-danger remove_field" type="button"><i class="icon-remove" data-feather="x"></i></button></div><div class="col-12 col-md-6 col-lg-4"><div class="form-group"><label for="FinishGoodMaterialName' +
+                        x +
+                        '" class="active">Finished Goods Material Name</label><select class="form-control select" name="FinishGoodMaterialName[]" id="FinishGoodMaterialName' +
+                        x + '" onchange="getcapacity($(this).val(),' + x +
+                        ')"><option>Choose Material Name</option>@if (isset($finishgoodmaterials)) @foreach ($finishgoodmaterials as $key => $value) <option value="{{ $key }}">{{ $value }}</option> @endforeach @endif</select></div></div><div class="col-12 col-md-6 col-lg-4"><div class="form-group"><label for="Quantity" class="active">Quantity (Kg.)</label><input type="text" class="form-control" name="Quantity[]" id="Quantity" placeholder="" onkeypress="return validateNumber(event);"></div></div></div></div>'
+                        ); //add input box
+                }
+                feather.replace()
+            });
+
+            $(wrapper).on("click", ".remove_field", function(e) { //user click on remove text
+                e.preventDefault();
+                $(this).parents('div.row').remove();
+                x--;
+            })
+        });
         $(document).ready(function() {
             var max_fields = 15; //maximum input boxes allowed
             var wrapper = $(".input_fields_wrap_9"); //Fields wrapper

@@ -172,7 +172,26 @@ class InwardFinishedController extends Controller
                     $sdata["material_stock"] = $stock->material_stock+$request['total_quantity'];
                     $stock->update($sdata);
                 }
-                
+                $data = [
+                    'quantity_status' => "Approved",
+                    'date_of_approval' => date("Y-m-d"),
+                    'inward_material_id' => $result->id,
+                    'inward_material_item_id' => $result->id,
+                    'total_qty' =>$request['total_quantity'],
+                    'raw_material_id' => $request['product_name'],
+                    'ar_no' => "",
+                    'ar_no_date_date' => date("Y-m-d"),
+                    'checked_by' => 6,
+                    'material_type' => "F",
+                    'quantity_approved' => $request['total_quantity'],
+                    'quantity_rejected' => 0,
+                    'remark' => ''
+                ];
+                $qty_check = Qualitycontroll::create($data);
+                if(!$qty_check){
+                    DB::rollback();
+                    return redirect(route("new_stock"))->with('error', "Something went wrong");
+                }
 
             
             return redirect("new_stock")->with('success', "Data created successfully");

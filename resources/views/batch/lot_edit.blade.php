@@ -235,6 +235,7 @@
                                 <th>Start Time <br> (Hrs)</th>
                                 <th>End Time <br> (Hrs)</th>
                                 <th>Done by</th>
+                                <th>Checked by</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -254,9 +255,10 @@
                                                 id="stratTime" class="form-control time" data-mask="00:00"></td>
                                         <td><input type="time" value="{{ $v->endTime }}" name="endTime[]" id="endTime[1]"
                                                 class="form-control time" data-mask="00:00"></td>
-                                        <td>{{ Form::select('doneby[]', $users, old('doneby')?old('doneby'):(isset($v->doneby)?$v->doneby:Auth::user()->id), ['id' => 'doneby[5]', 'class' => 'form-control select']) }}
+                                        <td>{{ Form::select('doneby[]', $users, old('doneby')?old('doneby'):(isset($v->doneby)?$v->doneby:Auth::user()->id), ['id' => 'doneby[5]', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }}
 
                                         </td>
+                                        <td>{{ Form::select('checkedby[]', $checkedBy, old('checkedby')?old('checkedby'):(isset($v->checkedby)?$v->checkedby:Auth::user()->id), ['id' => 'checkedby[5]', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }}</td>
                                     </tr>
                                 @endforeach
                             @else
@@ -271,8 +273,9 @@
                                         data-mask="00:00"></td>
                                 <td><input type="text" name="endTime[]" id="endTime[{{ $i }}]" class="form-control timepicker"
                                         data-mask="00:00"></td>
-                                <td>{{ Form::select('doneby[]', $users, old('doneby')?old('doneby'):Auth::user()->id, ['id' => 'doneby['.$i.']', 'class' => 'form-control select']) }}
-                                </td>
+                                <td>{{ Form::select('doneby[]', $users, old('doneby')?old('doneby'):Auth::user()->id, ['id' => 'doneby['.$i.']', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }}</td>
+                                    <td>{{ Form::select('checkedby[]', $checkedBy, old('checkedby')?old('checkedby'):Auth::user()->id, ['id' => 'checkedby['.$i.']', 'class' => 'form-control select', "placeholder"=>"Select Option"]) }} </td>
+                                
                             </tr>
                             @php $i++ ; @endphp
                         @endforeach

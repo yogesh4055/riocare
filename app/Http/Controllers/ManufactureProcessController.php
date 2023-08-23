@@ -620,8 +620,10 @@ class ManufactureProcessController extends Controller
          // production Manager
          $data["usersofficerpodman"] = USER::where("role_id",8)->pluck("name","id");
 
+         $data["checkedBy"] = USER::where("role_id",11)->pluck("name","id");
+
        $data["grades"] = Grade::get();  
- 
+    
         //$data['sequenceId'] = '#requisition';
         return view('add_manufacturing_edit', $data);
     }
@@ -2122,6 +2124,7 @@ class ManufactureProcessController extends Controller
                                 $arr_data['stratTime'] = $request->stratTime[$key];
                                 $arr_data['endTime'] = $request->endTime[$key];
                                 $arr_data['doneby'] = $request->doneby[$key];
+                                $arr_data['checkedby'] = $request->checkedby[$key];
                                 $arr_data['lot_id'] = $AddLotsl->id;
                                 $arr_data['process_id'] = $key+1;
                                 $result = Processlots::Create($arr_data);
@@ -2149,7 +2152,7 @@ class ManufactureProcessController extends Controller
         }
     }
     public function add_mixing_update(Request $request)
-    {
+    {   
         $arr['main_batch_id'] = $request->mainid;
         $arr['qty_kg'] = $request->qty_kg;
         $arr['start_time'] = $request->startTime;
@@ -2159,6 +2162,8 @@ class ManufactureProcessController extends Controller
         $arr['final_pH'] = $request->finalpH;
         $arr['done_by'] = $request->doneBy;
         $arr['done_by_1'] = $request->doneBy1;
+        $arr['checked_by'] = $request->checkedBy;
+        $arr['checked_by_1'] = $request->checkedBy1;
         $arr['date'] = $request->m_date;
         $mixing = Mixing::select('*')->where('main_batch_id', $request->mainid)->first();
         $sequenceId = 1;
@@ -2260,6 +2265,7 @@ class ManufactureProcessController extends Controller
                                 $arr_data['stratTime'] = $request->stratTime[$key];
                                 $arr_data['endTime'] = $request->endTime[$key];
                                 $arr_data['doneby'] = $request->doneby[$key];
+                                $arr_data['checkedby'] = $request->checkedby[$key];
                                 $arr_data['lot_id'] = $lotsid;
                                 $arr_data['process_id'] = $request->processName[$key];
                                 $result = Processlots::Create($arr_data);
@@ -2909,6 +2915,14 @@ class ManufactureProcessController extends Controller
 
            $data["lables"] = GanerateLable::select("generate_label.*")->where('batch_id', $batchid)->first();
            $data['mixing'] = Mixing::select("*")->where('main_batch_id', $batchid)->first();
+           if(isset($data['mixing']->done_by))
+           $data["doneBy"] = USER::where("id",$data['mixing']->done_by)->first();
+           if(isset($data['mixing']->done_by_1))
+           $data["doneBy1"] = USER::where("id",$data['mixing']->done_by_1)->first();
+           if(isset($data['mixing']->checked_by))
+           $data["checkedBy"] = USER::where("id",$data['mixing']->checked_by)->first();
+           if(isset($data['mixing']->checked_by_1))
+           $data["checkedBy1"] = USER::where("id",$data['mixing']->checked_by_1)->first();
 
            //equipment detailsid
 
@@ -3015,7 +3029,7 @@ class ManufactureProcessController extends Controller
 
 
 
-                    $process  = Processlots::select("qty","temp","stratTime","endTime","users.name as doneby","process_id","processes.process_name","processes.group_id")
+                    $process  = Processlots::select("qty","temp","stratTime","endTime","doneby","checkedby","process_id","processes.process_name","processes.group_id")
                     ->join("processes","processes.id","process_lots.process_id")
                     ->join("users","users.id","process_lots.doneby")->where("process_lots.lot_id",$lotsdetails->id)->get();
                     $data["equipment_status"] = DB::table("list_of_equipment_in_manufacturin_process")
@@ -3065,7 +3079,8 @@ class ManufactureProcessController extends Controller
                    }
 
 
-                    $data["users"] = USER::where("role_id",6)->pluck("name","id");;
+                    $data["users"] = USER::where("role_id",6)->pluck("name","id");
+                    $data["checkedBy"] = USER::where("role_id",11)->pluck("name","id");
 
                     $view = view('batch.lot_edit', $data)->render();
             }
@@ -3078,7 +3093,7 @@ class ManufactureProcessController extends Controller
     }
 
     public function lotseditupdate (Request $request)
-    {
+    { 
         if($request->id)
         {
             $lots = AddLotsl::find($request->id); //add_lotsl
@@ -3194,6 +3209,7 @@ class ManufactureProcessController extends Controller
                                         $arr_data['stratTime'] = $request->stratTime[$key];
                                         $arr_data['endTime'] = $request->endTime[$key];
                                         $arr_data['doneby'] = $request->doneby[$key];
+                                        $arr_data['checkedby'] = $request->checkedby[$key];
                                         $arr_data['lot_id'] = $lotsid;
                                         $arr_data['process_id'] = $request->processName[$key];
                                         $result = Processlots::Create($arr_data);

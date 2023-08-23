@@ -302,10 +302,10 @@
 @push("scripts")
 <script>
     const calculatesample = () => {
-        let  qcsampling = parseInt($("#qcsampling").val())  ? $("#qcsampling").val() : 0 ;
-        let  StabilitySample = parseInt($("#StabilitySample").val())? $("#StabilitySample").val() : 0;
-        let  WorkingSlandered =parseInt( $("#WorkingSlandered").val())  ? $("#WorkingSlandered").val() : 0;
-        let  ValidationSample = parseInt($("#ValidationSample").val())  ? $("#ValidationSample").val() : 0;
+        let  qcsampling = parseFloat($("#qcsampling").val())  ? $("#qcsampling").val() : 0 ;
+        let  StabilitySample = parseFloat($("#StabilitySample").val())? $("#StabilitySample").val() : 0;
+        let  WorkingSlandered =parseFloat( $("#WorkingSlandered").val())  ? $("#WorkingSlandered").val() : 0;
+        let  ValidationSample = parseFloat($("#ValidationSample").val())  ? $("#ValidationSample").val() : 0;
 
         let total = 0;
         total = parseFloat(ValidationSample)+parseFloat(qcsampling)+parseFloat(StabilitySample)+parseFloat(WorkingSlandered);

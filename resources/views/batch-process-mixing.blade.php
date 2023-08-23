@@ -55,6 +55,7 @@
                         <th rowspan="2">Qty. (Ltr.)</th>
                         <th colspan="2">Time (Hrs)<br>Start | End</th>
                         <th rowspan="2">Done by</th>
+                        <th rowspan="2">Checked by</th>
                     </tr>
 				</thead>
 				<tbody>
@@ -63,7 +64,8 @@
                         <td>{{isset($mixing) ? $mixing->qty_kg : ''}}</td>
                         <td>{{isset($mixing) ? $mixing->start_time : ''}}</td>
                         <td>{{isset($mixing) ? $mixing->end_time : ''}}</td>
-                        <td>{{isset($mixing) ? $mixing->done_by : ''}}</td>
+                        <td>{{isset($doneBy) ? $doneBy : ''}}</td>
+                        <td>{{isset($checkedBy) ? $checkedBy : ''}}</td>
                     </tr>
                 </tbody>		
 			</table>
@@ -81,7 +83,8 @@
                             <td> For correcting pH (Quantity : {{isset($mixing) ? $mixing->process_qty : ''}} kg.) O-Phosporic acid is added to achieve the desired pH. </pre></td>
                             <td>{{isset($mixing) ? $mixing->qty_ltr : ''}}</td>
                             <td>{{isset($mixing) ? $mixing->final_pH : ''}}</td>
-                            <td>{{isset($mixing) ? $mixing->done_by_1 : ''}}</td>
+                            <td>{{isset($doneBy1) ? $doneBy1 : ''}}</td>
+                            <td>{{isset($checkedBy1) ? $checkedBy1 : ''}}</td>
                         </tr>
                     </tbody>
                 </table>

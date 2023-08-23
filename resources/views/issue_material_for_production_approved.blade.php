@@ -81,6 +81,13 @@
                                         ->where("stock.matarial_id",$mat->PackingMaterialName)
                                         ->where(DB::raw("(stock.qty-stock.used_qty)"),">",0)
                                         ->get(); 
+                                    } else if ($mat->type == 'F') {
+                                        $batch = App\Models\Stock::select("inward_finished_goods.batch_no","stock.id",'inward_finished_goods.id as inword_item_id')
+                                        ->join("inward_finished_goods","inward_finished_goods.id","stock.batch_no")
+                                        ->where("stock.matarial_id",$mat->PackingMaterialName)
+                                        ->where(DB::raw("(stock.qty-stock.used_qty)"),">",0)
+                                        ->get();                                        
+                                         
                                     } else  {
                                         $batch = App\Models\Stock::select("inward_raw_materials_items.batch_no","stock.id",'inward_raw_materials_items.id as inword_item_id')
                                         ->join("inward_raw_materials_items","inward_raw_materials_items.id","stock.batch_no")
@@ -94,7 +101,7 @@
                                 
                             <div class="row add-more-wrap after-add-more m-0 mb-4">
                                 {{-- <span class="add-count">{{ $i }}</span> --}}
-                                @php $material_type = ($mat->type=='R')? 'Raw Material':(($mat->type=='P')? 'Packing Material' :'') ;
+                                @php $material_type = ($mat->type=='R')? 'Raw Material':(($mat->type=='P')? 'Packing Material' :'Finished Goods') ;
                                 $type = $mat->type;
                                 @endphp
                                 <div class="col-12 col-md-6 col-lg-6">
@@ -151,14 +158,14 @@
                                         <input type="text" class="form-control" name="arno{{ $mat->details_id }}[]" id="arno{{ $i }}" placeholder="A.R.N. Number" value="">
                                     </div>
                                 </div>
-                                
+                                @if($mat->type != "F")
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <div class="form-group">
                                         <label for="arno" class="active">Date of Approval</label>
                                         <input type="date" class="form-control" name="arnodate{{ $mat->details_id }}[]" id="arnodate{{ $i }}" placeholder="Date of Approval" value="">
                                     </div>
                                 </div>
-                               
+                                @endif
                                 @endif
                                 <div class="col-12 col-md-6 col-lg-4">
                                     <div class="form-group">
