@@ -2,6 +2,12 @@
 @section('title', 'Add batch Manufacture')
 @section('content')
 
+
+    
+<!-- datepicker styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+
+
 <style>
     .swal2-icon.swal2-warning {
     font-size: 20px;
@@ -1230,4 +1236,17 @@ function viewhomozine(id)
 
 
     </script>
+
+    <script type="text/javascript">
+        $(function () {
+          $('.datepicker').datepicker({
+            language: "es",
+            autoclose: true,
+            format: "dd-mm-yyyy"
+          });
+        });
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 @endpush
