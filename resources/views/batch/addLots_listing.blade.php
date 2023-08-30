@@ -103,8 +103,12 @@
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="form-group">
                     <label for="Date">Date</label>
-                    <input type="date" class="form-control" name="Process_date" id="Process_date " placeholder=""
-                        value="{{ date('Y-m-d') }}">
+                    <div class="datepicker date input-group">
+                        <input type="text" placeholder="Choose Date" class="form-control" id="Process_date" name="Process_date" value="{{ date('d-m-Y') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
                 </div>
             </div>
             <div class="col-12 col-md-6 col-lg-4">

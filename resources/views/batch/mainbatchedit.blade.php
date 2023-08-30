@@ -170,7 +170,16 @@
 
                     </div>
                 </div>
+                
+                <div class="col-12 col-md-6">
+                    <div class="form-group">
+                        <label for="storeManager">Store Manager</label> 
+                        {{ Form::select('storeManager',$usersstoreman,old("storeManager")?old("storeManager"):$edit_batchmanufacturing->storeManager,array('class'=>'form-control select',"placeholder"=>"Store Manager","id"=>"storeManager")) }}
 
+
+                    </div>
+                </div>
+                
 
                 <div class="col-12 col-md-6">
                     <div class="form-group">
@@ -180,7 +189,7 @@
                             placeholder="Note / Remark">{{ $edit_batchmanufacturing->Remark }}</textarea>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="margin-top: -53px;">
+                <div class="col-12 col-md-6 col-lg-6 col-xl-6" style="">
                     <div class="form-group">
                         <label for="approval" class="active">Deviation sheet attached</label>
                         <select class="form-control select" name="approval" id="approval">

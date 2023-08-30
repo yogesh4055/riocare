@@ -92,9 +92,14 @@
                         @if (isset($HomogenizingList) && count($HomogenizingList) > 0)
                             @foreach ($HomogenizingList as $key => $temp)
                                 <tr>
-                                    <td><input type="date" name="dateProcess[]"
-                                            value="{{ $temp->dateProcess }}" id="dateProcess[1]"
-                                            class="form-control"></td>
+                                    <td>
+                                        <div class="datepicker date input-group">
+                                            <input type="text" placeholder="Choose Date" class="form-control" id="dateProcess[1]" name="dateProcess[]" value="{{ isset($temp->dateProcess) ? date('d-m-Y', strtotime($temp->dateProcess)): date('d-m-Y') }}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
+                                        
                                     <td><input type="text" name="lot[]" id="lot" class="form-control"
                                             value=""></td>
                                     <td><input type="text" name="qty[]" id="qty"
@@ -112,8 +117,13 @@
                         @else
 
                             <tr>
-                                <td><input type="date" name="dateProcess[]" id="dateProcess[1]"
-                                        class="form-control" value="{{ date('Y-m-d') }}"></td>
+                                <td>
+                                    <div class="datepicker date input-group">
+                                            <input type="text" placeholder="Choose Date" class="form-control" id="dateProcess[1]" name="dateProcess[]" value="{{ date('d-m-Y') }}">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                            </div>
+                                        </div>
                                 <td><input type="text" name="lot[]" id="lot" class="form-control"
                                         value=""><input type="hidden" name="lotsid[]" value=""></td>
                                 <td><input type="text" name="qty[]" id="qty[1]"

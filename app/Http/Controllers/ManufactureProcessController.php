@@ -613,6 +613,7 @@ class ManufactureProcessController extends Controller
         $data["users"] = USER::pluck("name","id");
         $data["usersworker"] = USER::where("role_id",6)->pluck("name","id");
         $data["usersofficerqc"] = USER::where("role_id",5)->pluck("name","id");
+        $data["usersstoreman"] = USER::where("role_id",3)->pluck("name","id");
 
         // office production
         $data["usersofficerpod"] = USER::where("role_id",7)->pluck("name","id");
@@ -649,6 +650,7 @@ class ManufactureProcessController extends Controller
             "approval" =>  $request->approval,
             "approvalDate" =>  $request->approvalDate,
             "checkedByI" => $request->checkedByI,
+            "storeManager" => $request->storeManager,
             "Remark" =>  $request->Remark,
             "is_active" => 1,
             "is_delete" => 1,
@@ -2724,7 +2726,7 @@ class ManufactureProcessController extends Controller
     public function pdfview(Request $request,$id)
     {
 
-        $data['manufacture'] = BatchManufacture::select('add_batch_manufacture.*', 'raw_materials.material_name',"userdone.name as doneby","usercheck.name as usercheck","qccheck.name as qcname")
+        $data['manufacture'] = BatchManufacture::select('add_batch_manufacture.*', 'raw_materials.material_name',"userdone.name as doneby","storemanager.name as stromgr","usercheck.name as usercheck","qccheck.name as qcname")
             ->leftJoin("quality_controll_check",function($join){
                 $join->on("quality_controll_check.inward_material_id","add_batch_manufacture.id");
                 $join->where("quality_controll_check.material_type","B");
@@ -2733,6 +2735,7 @@ class ManufactureProcessController extends Controller
             ->leftJoin('users as userdone', 'userdone.id', '=', 'add_batch_manufacture.doneBy')
             ->leftJoin('users as usercheck', 'usercheck.id', '=', 'add_batch_manufacture.checkedBy')
             ->leftJoin('users as qccheck', 'qccheck.id', '=', 'add_batch_manufacture.checkedByI')
+            ->leftJoin('users as storemanager', 'storemanager.id', '=', 'add_batch_manufacture.storeManager')
             ->where("add_batch_manufacture.id",$id)
             ->orderBy('add_batch_manufacture.id','desc')
             ->first();

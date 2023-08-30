@@ -113,7 +113,7 @@
 				</table>
                 <div style="padding:1rem 0;text-align:right;text-decoration:underline;font-size:0.8rem;font-weight:bold;color:#616161;">
 				<span style="display:inline-block;margin-right:2rem;min-width:10%;vertical-align:top;text-align:center;">
-				<span style="display:block;border-bottom:2px solid #000;min-width:100%;margin-bottom:5px;">{{$manufacture->doneby}}
+				<span style="display:block;border-bottom:2px solid #000;min-width:100%;margin-bottom:5px;">{{$manufacture->stromgr}}
 				</span>(Manager-Store)</span>
 				</div>
 			@endif

@@ -10,9 +10,12 @@
             <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="form-group">
                     <label for="m_date" class="active">Date</label>
-                    <input type="date" class="form-control calendar" name="m_date"
-                        value="{{ isset($mixing->date) ? date('Y-m-d',strtotime($mixing->date)) : date('Y-m-d') }}"
-                        id="m_date" value="{{ date('Y-m-d') }}">
+                    <div class="datepicker date input-group">
+                        <input type="text" placeholder="Choose Date" class="form-control" id="m_date" name="m_date" value="{{ isset($mixing->date) ? date('d-m-Y', strtotime($mixing->date)): date('d-m-Y') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
                 </div>
             </div>
             <div class="form-row">

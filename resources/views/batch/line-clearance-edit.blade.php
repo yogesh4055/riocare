@@ -26,7 +26,13 @@
             <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="form-group">
                     <label for="Date">Date </label>
-                    <input type="date" class="form-control" name="Date"  id="Date" placeholder="" value="{{ isset($lineclearace->Date)?$lineclearace->Date:date('Y-m-d') }}">
+                    <div class="datepicker date input-group">
+                        <input type="text" placeholder="Choose Date" class="form-control" id="fecha1" name="Date" value="{{ isset($lineclearace->Date) ? date('d-m-Y', strtotime($lineclearace->Date)): date('d-m-Y') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
+
                 </div>
             </div>
 

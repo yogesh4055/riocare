@@ -27,9 +27,15 @@
             <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="form-group">
                     <label for="ManufacturerDate" class="active">Date</label>
-                    <input type="date" class="form-control calendar" name="ManufacturerDate"
-                        value="{{ isset($packingmateria->ManufacturerDate) ? $packingmateria->ManufacturerDate : date('Y-m-d') }}"
-                        id="ManufacturerDate" value={{ date('Y-m-d') }}>
+                     <div class="datepicker date input-group">
+                       <input type="text" placeholder="Choose Date" class="form-control" name="ManufacturerDate"
+                           value="{{ isset($packingmateria->ManufacturerDate) ? date('d-m-Y', strtotime($packingmateria->ManufacturerDate)): date('d-m-Y') }}"
+                           id="ManufacturerDate">
+                            <div class="input-group-append">
+                               <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                    </div>
+
                 </div>
             </div>
             <div class="col-12 col-md-12 col-lg-12 col-xl-12">
