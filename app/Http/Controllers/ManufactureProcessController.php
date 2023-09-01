@@ -2166,13 +2166,16 @@ class ManufactureProcessController extends Controller
         $arr['done_by_1'] = $request->doneBy1;
         $arr['checked_by'] = $request->checkedBy;
         $arr['checked_by_1'] = $request->checkedBy1;
-        $arr['date'] = $request->m_date;
+        //dd($request->date);
+        $newDate = date("Y-m-d", strtotime($request->date));
+        $arr['date'] = $newDate;
         $mixing = Mixing::select('*')->where('main_batch_id', $request->mainid)->first();
         $sequenceId = 1;
             if (isset($request->sequenceId)) {
                 $sequenceId = (int)$request->sequenceId + 1;
             }
         if(isset($mixing) && $mixing){
+           
             $mix = Mixing::where('main_batch_id', $request->mainid)->update($arr);
         } else {
             $mix = Mixing::create($arr);
@@ -2803,7 +2806,7 @@ class ManufactureProcessController extends Controller
 
             // packing material requestion  issual
 
-            $data["Requisitionissuedmaterialpacking"] = Requisitionissuedmaterial::select("issue_material_production_requestion.id","app.name as approvedby","checked.name as checkby")->where("batch_id", $batchid)->where("type","P")->join("users as app","app.id","issue_material_production_requestion.ApprovedBy")->join("users as checked","checked.id","issue_material_production_requestion.checkedBy")->orderBy('id', 'desc')->get();
+            $data["Requisitionissuedmaterialpacking"] = Requisitionissuedmaterial::select("issue_material_production_requestion.id","app.name as approvedby","checked.name as checkby")->where("batch_id", $batchid)->where("type","P")->leftjoin("users as app","app.id","issue_material_production_requestion.ApprovedBy")->leftjoin("users as checked","checked.id","issue_material_production_requestion.checkedBy")->orderBy('id', 'desc')->get();
              if(isset($data["Requisitionissuedmaterialpacking"]) && $data["Requisitionissuedmaterialpacking"])
              {
                         foreach($data["Requisitionissuedmaterialpacking"] as $mat)

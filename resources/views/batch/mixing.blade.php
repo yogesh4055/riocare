@@ -9,9 +9,9 @@
             <input type="hidden" value="10" name="sequenceId">
             <div class="col-12 col-md-6 col-lg-6 col-xl-6">
                 <div class="form-group">
-                    <label for="m_date" class="active">Date</label>
+                    <label for="date" class="active">Date</label>
                     <div class="datepicker date input-group">
-                        <input type="text" placeholder="Choose Date" class="form-control" id="m_date" name="m_date" value="{{ isset($mixing->date) ? date('d-m-Y', strtotime($mixing->date)): date('d-m-Y') }}">
+                        <input type="text" placeholder="Choose Date" class="form-control" id="date" name="date" value="{{ isset($mixing->date) ? date('d-m-Y', strtotime($mixing->date)): date('d-m-Y') }}">
                         <div class="input-group-append">
                           <span class="input-group-text"><i class="fa fa-calendar"></i></span>
                         </div>

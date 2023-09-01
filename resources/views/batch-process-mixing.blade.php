@@ -47,7 +47,7 @@
 			</table>
 			<div style="padding:1rem 0;text-align:left;text-decoration:underline;font-size:1.2rem;font-weight:bold;color:#616161;">
 			Mixing:</div>
-			<div align="right">Date: {{ isset($mixing->date) ? date('Y-m-d',strtotime($mixing->date)) : '' }}</div>
+			<div align="right">Date: {{ isset($mixing->date) ? date('d-m-Y',strtotime($mixing->date)) : '' }}</div>
 				<table class="table table-bordered" >
 				<thead>
 					<tr>
@@ -64,8 +64,8 @@
                         <td>{{isset($mixing) ? $mixing->qty_kg : ''}}</td>
                         <td>{{isset($mixing) ? $mixing->start_time : ''}}</td>
                         <td>{{isset($mixing) ? $mixing->end_time : ''}}</td>
-                        <td>{{isset($doneBy) ? $doneBy : ''}}</td>
-                        <td>{{isset($checkedBy) ? $checkedBy : ''}}</td>
+                        <td>{{isset($doneBy) ? $doneBy->name : ''}}</td>
+                        <td>{{isset($checkedBy) ? $checkedBy->name : ''}}</td>
                     </tr>
                 </tbody>		
 			</table>
@@ -76,6 +76,7 @@
                             <th>Qty. (Ltr.)</th>
                             <th>Final pH</th>
                             <th>Done by</th>
+                            <th>Checked by</th>
                         </tr>
                     </thead>
                     <tbody>           
@@ -83,8 +84,8 @@
                             <td> For correcting pH (Quantity : {{isset($mixing) ? $mixing->process_qty : ''}} kg.) O-Phosporic acid is added to achieve the desired pH. </pre></td>
                             <td>{{isset($mixing) ? $mixing->qty_ltr : ''}}</td>
                             <td>{{isset($mixing) ? $mixing->final_pH : ''}}</td>
-                            <td>{{isset($doneBy1) ? $doneBy1 : ''}}</td>
-                            <td>{{isset($checkedBy1) ? $checkedBy1 : ''}}</td>
+                            <td>{{isset($doneBy1) ? $doneBy1->name : ''}}</td>
+                            <td>{{isset($checkedBy1) ? $checkedBy1->name : ''}}</td>
                         </tr>
                     </tbody>
                 </table>
