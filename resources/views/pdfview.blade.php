@@ -118,35 +118,35 @@
 	<span class="page-number" >Page No {{$counts}} </span>
 
 	@if(isset($lables) && $lables)
-	@if($lables->net_wt_200 && $lables->tare_wt_200)
+	@if($lables->net_wt_200 !='' || $lables->tare_wt_200 !='')
 	@include("batch-process-label")
 	<div class="pagebreak"></div>
 	<span class="page-number" >Page No {{$counts + 1}} </span>
 	@endif
 
-	@if($lables->net_wt_50 && $lables->tare_wt_50)
+	@if($lables->net_wt_50 !='' || $lables->tare_wt_50 !='')
 	@include("batch-process-label-one")
 	<div class="pagebreak"></div>
 	<span class="page-number" >Page No {{$counts + 2}} </span>
 	@endif
 
-	@if($lables->net_wt_30 && $lables->tare_wt_30)
+	@if($lables->net_wt_30 !='' || $lables->tare_wt_30 !='')
 	@include("batch-process-label-two")
 	<div class="pagebreak"></div>
 	<span class="page-number" >Page No {{$counts + 3}} </span>
 	@endif
 
-	@if($lables->net_wt_5 && $lables->tare_wt_5)
+	@if($lables->net_wt_5 !='' || $lables->tare_wt_5 !='')
 	@include("batch-process-label-three")
 	<span class="page-number" >Page No {{$counts + 4}} </span>
 	@endif
 
-	@if($lables->net_wtb_25 && $lables->tare_wtb_25)
+	@if($lables->net_wtb_25 !='' || $lables->tare_wtb_25 !='')
 	@include("batch-process-label-four")
 	<span class="page-number" >Page No {{$counts + 5}} </span>
 	@endif
 	
-	@if($lables->net_wtb_50 && $lables->tare_wtb_50)
+	@if($lables->net_wtb_50 !='' || $lables->tare_wtb_50 !='')
 	@include("batch-process-label-five")
 	<span class="page-number" >Page No {{$counts + 6}} </span>
 	@endif

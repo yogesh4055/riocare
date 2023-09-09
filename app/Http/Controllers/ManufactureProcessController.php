@@ -2585,6 +2585,7 @@ class ManufactureProcessController extends Controller
             "Remark"=> "This :attribute field is required.",
         ];
         // $validated = $request->validate($arrRules, $arrMessages);
+     
         $data = [
             "simethicone"=> $request['simethicone'],
             "simethicone"=> $request['simethicone'],

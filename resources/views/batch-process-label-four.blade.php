@@ -1,5 +1,5 @@
 @if(isset($lables) && $lables)
-@if($lables->net_wtb_25 && $lables->tare_wtb_25)
+@if($lables->net_wtb_25 !='' || $lables->tare_wtb_25 !='')
 		<div class="container-scroller">
 
 			<div class="container-fluid p-3">
@@ -82,12 +82,20 @@
 														<tr>
 															<td>NET WT</td>
 															<td>:</td>
-															<td>{{$lables->net_wtb_25}} KG</td>
+															@if(!empty($lables->tare_wt_5))
+															<td>{{$lables->tare_wt_5}} KG</td>
+															@else
+															<td>0 KG</td>
+															@endif
 														</tr>
 														<tr>
 															<td>TARE WT</td>
 															<td>:</td>
+															@if(!empty($lables->tare_wtb_25))
 															<td>{{$lables->tare_wtb_25}} KG</td>
+															@else
+															<td>0 KG</td>
+															@endif
 														</tr>
 													</table>
 												</td>
