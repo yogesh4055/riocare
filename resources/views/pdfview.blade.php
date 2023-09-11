@@ -85,7 +85,7 @@
 	<span class="page-number" >Page No 6 </span>
 
 
-	 <?php if($manufacture->material_name !='Simethicone 50 % Powder (Simflo)' && $manufacture->material_name !='Silicone Emulsion (Remsil-35)') {?>
+	 <?php if($manufacture->material_name =="Simethicone Emulsion-30% (Simul-73)" || $manufacture->material_name =='Silicone Emulsion (Remsil-35)') {?>
 
 	@include("batch-process-mixing")
 	<div class="pagebreak"> </div>
@@ -106,6 +106,8 @@
 	 @endforeach
 	@endif
 	
+	<?php if($manufacture->material_name =="Simethicone (Filix-110)") {?>
+
 	@if(isset($Homogenizing) && $Homogenizing)
 	 @php $l =0; $counts = $count ; @endphp
 	
@@ -118,6 +120,8 @@
 		 @endphp
 	 @endforeach
 	@endif
+
+<?php } ?>
 
 	@include("batch-process-packing")
 	<div class="pagebreak"></div>

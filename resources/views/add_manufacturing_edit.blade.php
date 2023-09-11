@@ -99,7 +99,7 @@
 
                    
 
-                    <?php if($batchproduct->material_name !='Simethicone 50 % Powder (Simflo)' && $batchproduct->material_name !='Silicone Emulsion (Remsil-35)') {?>
+                    <?php if($batchproduct->material_name =="Simethicone Emulsion-30% (Simul-73)" || $batchproduct->material_name =='Silicone Emulsion (Remsil-35)') {?>
 
                     <li><a role="tab" class="{{ $sequenceId == '11' ? 'active' : '' }}"
                             area-selected="{{ $sequenceId == '11' ? 'true' : 'false' }}" data-toggle="tab"
@@ -110,10 +110,14 @@
                             area-selected="{{ in_array($sequenceId,array(9,10)) ? 'true' : 'false' }}" data-toggle="tab" href="#addLots"
                             hidden="hidden">Lots</a></li> -->
 
+                       
+                      <?php if($batchproduct->material_name =="Simethicone (Filix-110)") {?>
 
                     <li><a role="tab" class="{{ $sequenceId == '12' ? 'active' : '' }}"
                             area-selected="{{ $sequenceId == '12' ? 'true' : 'false' }}" data-toggle="tab"
                             href="#homogenizing">Homogenizing</a></li>
+                    <?php } ?>        
+
 
                     <li><a data-toggle="tab" class="{{ $sequenceId == '13' ? 'active' : '' }}"
                             area-selected="{{ $sequenceId == '13' ? 'true' : 'false' }}" href="#Packing">Packing</a></li>
