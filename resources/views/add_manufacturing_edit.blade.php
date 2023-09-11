@@ -97,9 +97,14 @@
                             area-selected="{{ in_array($sequenceId,array(9,10)) ? 'true' : 'false' }}" data-toggle="tab" href="#addLots"
                             hidden="hidden">Lots</a></li>
 
+                   
+
+                    <?php if($batchproduct->material_name !='Simethicone 50 % Powder (Simflo)' && $batchproduct->material_name !='Silicone Emulsion (Remsil-35)') {?>
+
                     <li><a role="tab" class="{{ $sequenceId == '11' ? 'active' : '' }}"
                             area-selected="{{ $sequenceId == '11' ? 'true' : 'false' }}" data-toggle="tab"
                             href="#mixing">Mixing</a></li>
+                    <?php } ?>
 
                     <!-- <li><a role="tab" class="{{ in_array($sequenceId,array(9,10)) ? 'active' : '' }}"
                             area-selected="{{ in_array($sequenceId,array(9,10)) ? 'true' : 'false' }}" data-toggle="tab" href="#addLots"

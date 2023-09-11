@@ -22,19 +22,22 @@
           <div class="col-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                 <label for="ar_date">AR. Date</label>
-                <input type="date" class="form-control" name="ar_date" id="ar_date" placeholder="AR Date"  value="{{ isset($qty_control_view->ar_no_date_date) ? date('Y-m-d', strtotime($qty_control_view->ar_no_date_date)) : date('Y-m-d', strtotime($qty_control_view->inward_ar_date)) }}">
+                <input type="date" class="form-control" name="ar_date" id="ar_date" placeholder="AR Date"  value="{{ isset($qty_control_view->ar_no_date_date) ? date('Y-m-d', strtotime($qty_control_view->ar_no_date_date)) : date('d-m-Y') }}" required>
+
+                <!-- value="{{ isset($qty_control_view->ar_no_date_date) ? date('Y-m-d', strtotime($qty_control_view->ar_no_date_date)) : date('Y-m-d', strtotime($qty_control_view->inward_ar_date)) }}" -->
+
             </div>
         </div>
           <div class="col-12 col-md-6 col-lg-6 col-xl-6">
             <div class="form-group">
                 <label for="QuantityRejected">AR. Number</label>
-                <input type="text" class="form-control" name="ar_number" id="ar_number" placeholder="AR No."  maxlength="120" onkeypress="" value="{{$qty_control_view->ar_no_date}}">
+                <input type="text" class="form-control" name="ar_number" id="ar_number" placeholder="AR No."  maxlength="120" onkeypress="" value="{{$qty_control_view->ar_no_date}}" required>
             </div>
         </div>
         <div class="col-12 col-md-6 col-lg-6 col-xl-6">
               <div class="form-group">
                   <label for="ApprovalDate">Date of Approval/Rejection</label>
-                  <input type="date" class="form-control calendar" name="date_of_approval" id="date_of_approval" placeholder="DD-MM-YYYY" value="@if($qty_control_view->date_of_approval){{$qty_control_view->date_of_approval}}@else{{ date("Y-m-d") }}@endif">
+                  <input type="date" class="form-control calendar" name="date_of_approval" id="date_of_approval" placeholder="DD-MM-YYYY" value="@if($qty_control_view->date_of_approval){{$qty_control_view->date_of_approval}}@else{{ date('Y-m-d') }}@endif">
               </div>
           </div>
 

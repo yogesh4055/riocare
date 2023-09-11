@@ -54,7 +54,7 @@
                                     <td>{{$temp->material_name}}</td>
                                     <td>{{$temp->batch_no}}</td>
 
-                                    <td>{{$temp->checkar}} / {{$temp->checkardate != "0000-00-00 00:00:00"?date("d/m/Y",strtotime($temp->checkardate)):""}}</td>
+                                    <td>  {{$temp->checkar}} / {{$temp->checkardate !='' && $temp->checkardate != "0000-00-00 00:00:00" && $temp->checkardate != "1970-01-01 00:00:00" ?date("d/m/Y",strtotime($temp->checkardate)):""}}</td>
                                     <td>{{number_format($temp->quantity_approved,3,".","") }}</td>
                                     <td>{{number_format($temp->quantity_rejected,3,".","") }}</td>
                                     <td>{{$temp->date_of_approval}}</td>

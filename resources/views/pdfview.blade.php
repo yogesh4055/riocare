@@ -83,9 +83,15 @@
 	@include("batch-process-lineclearance")
 	<div class="pagebreak"> </div>
 	<span class="page-number" >Page No 6 </span>
+
+
+	 <?php if($manufacture->material_name !='Simethicone 50 % Powder (Simflo)' && $manufacture->material_name !='Silicone Emulsion (Remsil-35)') {?>
+
 	@include("batch-process-mixing")
 	<div class="pagebreak"> </div>
 	<span class="page-number" >Page No 7 </span>
+
+<?php } ?>
 	
 	@php $count = 8 ;@endphp
 	@if(isset($lotsdetails) && $lotsdetails)
