@@ -59,12 +59,12 @@
 						<th>Viscosity: {{$manufacture->Viscosity}}</th>
 					</tr>
 					<tr>
-						<th>Production Commenced on: {{date("d-M-Y", strtotime($manufacture->ProductionCommencedon))}}</th>
-						<th>Production Completed on: {{date("d-M-Y", strtotime($manufacture->ProductionCompletedon))}}</th>
+						<th>Production Commenced on: {{date("d-m-Y", strtotime($manufacture->ProductionCommencedon))}}</th>
+						<th>Production Completed on: {{date("d-m-Y", strtotime($manufacture->ProductionCompletedon))}}</th>
 					</tr>
 					<tr>
-						<th>Manufacturing Date: {{ date("d-M-Y", strtotime($manufacture->ManufacturingDate))}}</th>
-						<th>Retest Date: {{ date("d-M-Y", strtotime($manufacture->RetestDate))}}</th>
+						<th>Manufacturing Date: {{ date("d-m-Y", strtotime($manufacture->ManufacturingDate))}}</th>
+						<th>Retest Date: {{ date("d-m-Y", strtotime($manufacture->RetestDate))}}</th>
 					</tr>
 				</thead>
 			</table>

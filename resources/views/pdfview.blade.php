@@ -106,11 +106,11 @@
 	 @endforeach
 	@endif
 	
-	<?php if($manufacture->material_name =="Simethicone (Filix-110)") {?>
+	
 
 	@if(isset($Homogenizing) && $Homogenizing)
 	 @php $l =0; $counts = $count ; @endphp
-	
+	<?php if($manufacture->material_name =="Simethicone (Filix-110)") {?>
 	 @foreach($Homogenizing as $hom)
 		@include("batch-process-homogenizing",array("homo"=>$hom,"homolist"=>$homoList[$hom->id]))
 		<div class="pagebreak"></div>
@@ -119,9 +119,10 @@
 			$counts = $counts + 1;
 		 @endphp
 	 @endforeach
+	 <?php } ?>
 	@endif
 
-<?php } ?>
+
 
 	@include("batch-process-packing")
 	<div class="pagebreak"></div>

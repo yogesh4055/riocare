@@ -64,12 +64,12 @@
 														<tr>
 															<td>MFG DATE</td>
 															<td>:</td>
-															<td>{{ date("d-M-Y", strtotime($lables->mfg_date))}} </td>
+															<td>{{ date("d-m-Y", strtotime($lables->mfg_date))}} </td>
 														</tr>
 														<tr>
 															<td>RETEST DATE</td>
 															<td>:</td>
-															<td>{{ date("d-M-Y", strtotime($lables->mfg_date))}}</td>
+															<td>{{ date("d-m-Y", strtotime($lables->mfg_date))}}</td>
 														</tr>
 													</table>
 												</td>
