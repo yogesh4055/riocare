@@ -27,19 +27,41 @@
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="form-group">
                         <label for="mfg_date" class="active">MFG Date</label>
-                        <input type="date" class="form-control" name="mfg_date" id="mfg_date"
+
+
+                        <div class="datepicker date input-group">
+                        <input type="text" placeholder="MFG Date" class="form-control" id="mfg_date" name="mfg_date" value="{{ isset($edit_ganerat_lable->mfg_date) ? date('d-m-Y', strtotime($edit_ganerat_lable->mfg_date)): date('d-m-Y') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
+
+
+                            
+                          <!-- <input type="date" class="form-control" name="mfg_date" id="mfg_date" placeholder="MFG Date"  value="{{ isset($edit_ganerat_lable->mfg_date) ? date('d-m-Y', strtotime($edit_ganerat_lable->mfg_date)) : date('d-m-Y') }}" required> -->
+
+                        <!-- <input type="date" class="form-control" name="mfg_date" id="mfg_date"
                             value="{{ isset($edit_ganerat_lable->mfg_date) ? $edit_ganerat_lable->mfg_date : $edit_batchmanufacturing->ManufacturingDate }}"
-                            placeholder="">
+                            placeholder=""> -->
                     </div>
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4">
                     <div class="form-group">
                         <label for="retest_date" class="active">Retest Date</label>
-                        <input type="date" class="form-control" name="retest_date"
+                        <!-- <input type="date" class="form-control" name="retest_date"
                             id="retest_date"
                             value="{{ isset($edit_ganerat_lable->retest_date) ? $edit_ganerat_lable->retest_date : $edit_batchmanufacturing->RetestDate }}"
-                            placeholder="">
+                            placeholder=""> -->
+
+
+                             <div class="datepicker date input-group">
+                            <input type="text" placeholder="Retest Date" class="form-control" id="retest_date" name="retest_date" value="{{ isset($edit_ganerat_lable->retest_date) ? date('d-m-Y', strtotime($edit_ganerat_lable->retest_date)): date('d-m-Y', strtotime($edit_batchmanufacturing->RetestDate)) }}">
+                            <div class="input-group-append">
+                              <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                            </div>
+                          </div>
+                      
                     </div>
                 </div>
                 </div>
