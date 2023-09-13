@@ -86,7 +86,7 @@
 															@if(!empty($lables->net_wtb_50))
 															<td>{{$lables->net_wtb_50}} KG</td>
 															@else
-															<td>0 KG</td>
+															<td>-</td>
 															@endif
 														</tr>
 														<tr>
@@ -95,7 +95,7 @@
 															@if(!empty($lables->tare_wtb_50))
 															<td>{{$lables->tare_wtb_50}} KG</td>
 															@else
-															<td>0 KG</td>
+															<td>-</td>
 															@endif
 														</tr>
 													</table>

@@ -27,7 +27,7 @@
                             <th rowspan="2">Start Time (Hrs)</th>
                             <th rowspan="2">End Time (Hrs)</th>
                             <th rowspan="2">Done by</th>
-                            <th rowspan="2">Cheked by</th>
+                            <th rowspan="2">Checked by</th>
                         </tr>
                        
                     </thead>
@@ -50,7 +50,7 @@
                             <th>Qty. (Ltr.)</th>
                             <th>Final pH</th>
                             <th>Done by</th>
-                            <th rowspan="2">Cheked by</th>
+                            <th rowspan="2">Checked by</th>
                         </tr>
                     </thead>
                     <tbody>           
