@@ -274,6 +274,7 @@
 
         var quantity = $(".qty").val();        
         var sum = 0;
+       
         $('.qty_cal').each(function(){
             sum += parseFloat(this.value);
         });
@@ -282,6 +283,7 @@
         }else{
             $("#qty_equal").val('');
         }
+
        // var current_stock = $(this).data('stock');
        // var insert = $(this).val();
        // if(current_stock<insert){
