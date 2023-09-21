@@ -21,12 +21,21 @@
             </div>
 
             <div class="col-12 col-md-6 col-lg-6 col-xl-6">
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label for="Date" class="active">Date</label>
                     <input type="date" class="form-control calendar"
                         value="{{ isset($requestion_finish_good->Date) ? $requestion_finish_good->Date : date('Y-m-d') }}"
                         name="Date" id="Date" value={{ date('Y-m-d') }}>
-                </div>
+                </div> -->
+
+                      <div class="datepicker date input-group form-group">
+                        <input type="text" placeholder="Choose Date" class="form-control" id="Date" name="Date" value="{{ isset($requestion_finish_good->Date) ? date('d-m-Y', strtotime($requestion_finish_good->Date)): date('d-m-Y') }}">
+                        <div class="input-group-append">
+                          <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                        </div>
+                      </div>
+
+
             </div>
 
             <div class="col-12 col-md-12 col-lg-12 col-xl-12">
