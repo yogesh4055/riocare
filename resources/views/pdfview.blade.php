@@ -92,6 +92,8 @@
 	<span class="page-number" >Page No 7 </span>
 
 <?php } ?>
+
+<!-- 24.  In Simethicone BMR, after 4 lots there should be first Homogenizing and then 5th lot followed by final Homogenizing -->
 	
 	@php $count = 8 ;@endphp
 	@if(isset($lotsdetails) && $lotsdetails)
